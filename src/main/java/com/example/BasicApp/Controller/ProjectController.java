@@ -3,6 +3,7 @@ package com.example.BasicApp.Controller;
 import com.example.BasicApp.Entity.Project;
 import com.example.BasicApp.Service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,5 +22,17 @@ public class ProjectController {
     @PostMapping
     public Project addProject(@RequestBody Project project){
         return service.addProject(project);
+    }
+
+    @PutMapping("/{id}")
+    public Project updateProject(@PathVariable Long id, @RequestBody Project projectDetails) {
+        return service.updateProject(id, projectDetails);
+    }
+
+    // Delete a project
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
+        service.deleteProject(id);
+        return ResponseEntity.noContent().build();
     }
 }
