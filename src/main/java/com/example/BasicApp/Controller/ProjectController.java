@@ -31,8 +31,8 @@ public class ProjectController {
 
     // Delete a project
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
-        service.deleteProject(id);
-        return ResponseEntity.noContent().build();
+    public String deleteProject(@PathVariable Long id) {
+
+        return service.deleteProject(id);
     }
 }
