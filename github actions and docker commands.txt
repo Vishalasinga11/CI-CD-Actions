@@ -1,0 +1,9 @@
+First we need to go to Actions in our repository then need to configure on Java with Maven
+Then need to customize the YAML file
+
+After successful build we need to pull the repository from docker hub
+
+Then we need to use
+-docker-compose build
+-docker-compose up
+commands to run the spring boot application

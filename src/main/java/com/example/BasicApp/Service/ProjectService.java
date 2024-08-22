@@ -41,9 +41,10 @@ public class ProjectService {
 
     // Delete a project
     public String deleteProject(Long id) {
-        Optional<Project >project = projectRepository.findById(id);
+        Optional<Project> project = projectRepository.findById(id);
         if(project.isPresent()){
             projectRepository.delete(project.get());
+
             return "Deleted successfully";
         }
         return "Id not found";
